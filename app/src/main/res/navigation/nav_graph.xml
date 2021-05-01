@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calenderFragment">
+    <fragment
+        android:id="@+id/calenderFragment"
+        android:name="com.example.oneul.CalenderFragment"
+        android:label="CalenderFragment" >
+        <action
+            android:id="@+id/action_calenderFragment_to_dailyDiaryFragment"
+            app:destination="@id/dailyDiaryFragment" />
+        <action
+            android:id="@+id/action_calenderFragment_to_dailyScheduleFragment"
+            app:destination="@id/dailyScheduleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dailyDiaryFragment"
+        android:name="com.example.oneul.DailyDiaryFragment"
+        android:label="DailyDiaryFragment" />
+    <dialog
+        android:id="@+id/dailyScheduleFragment"
+        android:name="com.example.oneul.DailyScheduleFragment"
+        android:label="DailyScheduleFragment" />
+</navigation>
