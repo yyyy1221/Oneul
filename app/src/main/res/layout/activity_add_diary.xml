@@ -61,37 +61,37 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_기쁨" />
+            android:button="@drawable/radio_button_joy" />
         <RadioButton
             android:id="@+id/radioButton신남"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_신남" />
+            android:button="@drawable/radio_button_enjoy" />
         <RadioButton
             android:id="@+id/radioButton우울"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_우울" />
+            android:button="@drawable/radio_button_gloom" />
         <RadioButton
             android:id="@+id/radioButton지침"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_지침" />
+            android:button="@drawable/radio_button_tired" />
         <RadioButton
             android:id="@+id/radioButton화남"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_화남" />
+            android:button="@drawable/radio_button_angry" />
         <RadioButton
             android:id="@+id/radioButton그냥"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_그냥" />
+            android:button="@drawable/radio_button_just" />
     </RadioGroup>
 
     <com.google.android.material.textfield.TextInputLayout
