@@ -8,6 +8,10 @@ android {
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
+    viewBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.oneul"
         minSdkVersion 21
@@ -49,4 +53,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // for calendar
+    implementation "com.github.prolificinteractive:material-calendarview:2.0.1"
+
 }
