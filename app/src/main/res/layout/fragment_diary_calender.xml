@@ -8,7 +8,7 @@
 
    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
        xmlns:app="http://schemas.android.com/apk/res-auto"
-       android:id="@+id/calendarView"
+       android:id="@+id/diary_calendarView"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        app:mcv_showOtherDates="defaults"
@@ -16,16 +16,6 @@
        app:mcv_rightArrow="@drawable/ic_button_circle_arrow_right"
        app:mcv_leftArrow="@drawable/ic_button_circle_arrow_left"
       />
-   <Button
-       android:id="@+id/button_schedule"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="daily schedule"/>
 
-   <Button
-       android:id="@+id/button_diary"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="daily diray"/>
 
 </LinearLayout>

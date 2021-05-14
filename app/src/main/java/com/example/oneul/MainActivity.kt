@@ -18,10 +18,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonAddEventMain.setOnClickListener {
-            intent= Intent(this,AddScheduleActivity::class.java)
-            startActivity(intent)
-            // 데이터 가져와야하므로 추후에 startResultActivity로 수정해야함
-        }
     }
 }
