@@ -17,6 +17,10 @@ class CalenderFragment: Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_calender, container, false)
 
+        view.button_schedule.setOnClickListener {
+            findNavController().navigate(R.id.action_calenderFragment_to_dailyScheduleFragment)
+        }
+
         view.button_diary.setOnClickListener {
             findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)
         }

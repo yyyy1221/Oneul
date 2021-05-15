@@ -41,7 +41,7 @@
             android:id="@+id/imageView6"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/신남" />
+            app:srcCompat="@drawable/sad" />
     </LinearLayout>
 
     <TextView

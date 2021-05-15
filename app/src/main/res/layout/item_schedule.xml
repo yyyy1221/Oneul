@@ -8,14 +8,16 @@
         android:id="@+id/text_time_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="오후 3:00"/>
+        android:text="오후 3:00"
+        style="@style/text_style"/>
 
     <TextView
         android:id="@+id/text_time_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_time_start"
-        android:text="오후 3:00"/>
+        android:text="오후 3:00"
+        style="@style/text_style"/>
 
     <LinearLayout
         android:id="@+id/linear_layout_line"
@@ -32,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/linear_layout_line"
         android:layout_centerVertical="true"
-        android:text="소프 회의"/>
+        android:text="소프 회의"
+        style="@style/text_style"/>
 
 </RelativeLayout>
