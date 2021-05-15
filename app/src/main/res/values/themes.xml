@@ -12,6 +12,15 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+
+    <!-- Font -->
+    <item name="android:buttonStyle">@style/OneulButtonStyle</item>
+    <item name="android:editTextStyle">@style/OneulEditTextStyle</item>
+    <item name="android:radioButtonStyle">@style/OneulRadioButtonStyle</item>
+    <item name="android:checkboxStyle">@style/OneulCheckboxStyle</item>
+    <item name="android:textViewStyle">@style/OneulTextViewStyle</item>
+
     </style>
 
     <style name="viewpager_dialog">

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:tint="#23FFFFFF"
-        app:srcCompat="@drawable/ic_backbutton" />
+        app:srcCompat="@drawable/ic_button_circle_arrow_left" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -41,7 +41,7 @@
             android:id="@+id/imageView6"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/sad" />
+            app:srcCompat="@drawable/enjoy" />
     </LinearLayout>
 
     <TextView
