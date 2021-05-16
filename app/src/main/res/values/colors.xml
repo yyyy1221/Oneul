@@ -13,4 +13,5 @@
     <color name="noColor">#00ff0000</color>
     <color name="transparent_blak">#1A000000</color>
     <color name="dark_beige">#b4a78f</color>
+    <color name="text_black">#707070</color>
 </resources>
