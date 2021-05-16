@@ -37,6 +37,18 @@ class MainFragment: Fragment() {
             // 데이터 가져와야하므로 추후에 startResultActivity로 수정해야함
         }
 
+        // toggle button to change
+        binding.toggleButtonToChangeMain.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.buttonAddDiaryMain.visibility = View.VISIBLE
+                binding.buttonAddEventMain.visibility =View.INVISIBLE
+            }else{
+                binding.buttonAddDiaryMain.visibility = View.INVISIBLE
+                binding.buttonAddEventMain.visibility =View.VISIBLE
+            }
+        }
+
+
         // Calendar Fragment
         scheduleCalendarFm = ScheduleCalenderFragment()
         childFragmentManager.beginTransaction().add(R.id.fragment_calendar_main, scheduleCalendarFm).addToBackStack(null).commit()
