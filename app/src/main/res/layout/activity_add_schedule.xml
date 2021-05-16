@@ -37,8 +37,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="제목"
+            android:padding="10dp"
+            style="@style/text_style"
             android:textColorHint="@color/gray_hint"
-            android:padding="10dp"/>
+            android:textSize="30dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,28 +51,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:text="시작"/>
+                android:text="시작"
+                style="@style/text_style"/>
 
             <TextView
                 android:id="@+id/text_date_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="2021.05.12" />
+                android:text="2021.05.12"
+                style="@style/text_style"/>
 
             <TextView
                 android:id="@+id/text_time_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:text="09:00" />
+                android:text="09:00"
+                style="@style/text_style"/>
 
             <TextView
                 android:id="@+id/text_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_start"
-                android:text="종료"/>
+                android:text="종료"
+                style="@style/text_style"/>
 
             <TextView
                 android:id="@+id/text_date_end"
@@ -78,7 +84,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/text_date_start"
-                android:text="2021.05.12" />
+                android:text="2021.05.12"
+                style="@style/text_style"/>
 
             <TextView
                 android:id="@+id/text_time_end"
@@ -86,22 +93,35 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/text_time_start"
-                android:text="10:00" />
+                android:text="10:00"
+                style="@style/text_style"/>
 
-            <ToggleButton
-                android:id="@+id/toggle_all_day"
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_below="@+id/text_time_end"-->
+<!--                android:layout_marginTop="10dp"-->
+
+            <Switch
+                android:id="@+id/switch_all_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/text_time_end"/>
+                android:layout_below="@+id/text_time_end"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/switch_selector"/>
 
             <TextView
                 android:id="@+id/text_all_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/toggle_all_day"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/switch_all_day"
                 android:layout_below="@+id/text_time_end"
-                android:text="종일"/>
+                android:text="종일"
+                style="@style/text_style"/>
 
         </RelativeLayout>
 
@@ -109,25 +129,29 @@
             android:id="@+id/text_repeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="반복"/>
+            android:text="반복"
+            style="@style/text_style"/>
 
         <TextView
             android:id="@+id/text_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="알림"/>
+            android:text="알림"
+            style="@style/text_style"/>
 
         <TextView
             android:id="@+id/text_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="위치"/>
+            android:text="위치"
+            style="@style/text_style"/>
 
         <TextView
             android:id="@+id/text_memo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="메모"/>
+            android:text="메모"
+            style="@style/text_style"/>
 
 
     </LinearLayout>
