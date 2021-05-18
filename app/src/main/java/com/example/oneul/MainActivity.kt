@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.oneul.config.MyContext
 import com.example.oneul.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,4 +27,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
+
 }

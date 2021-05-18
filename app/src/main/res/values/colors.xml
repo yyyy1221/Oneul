@@ -14,4 +14,7 @@
     <color name="transparent_blak">#1A000000</color>
     <color name="dark_beige">#b4a78f</color>
     <color name="text_black">#707070</color>
+    <color name="Calandar_list">#B3F5F5F5</color>
+    <color name="menu_myCalandar">#B4A78F</color>
+    <color name="drawer">#F2DECDAA</color>
 </resources>
