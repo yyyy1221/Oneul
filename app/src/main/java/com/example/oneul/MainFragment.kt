@@ -26,6 +26,8 @@ class MainFragment: Fragment() {
 
         binding.buttonDiary.setOnClickListener {
             findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)
+            val intent = Intent(context, AddDiaryActivity::class.java)
+            startActivity(intent)
         }
 
         binding.buttonSchedule.setOnClickListener {
