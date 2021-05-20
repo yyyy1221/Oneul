@@ -14,6 +14,7 @@ class MainFragment: Fragment() {
     private lateinit var binding:FragmentMainBinding
 
     private lateinit var scheduleCalendarFm:ScheduleCalenderFragment
+    private lateinit var diaryCalendarFm:DiaryCalenderFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +40,30 @@ class MainFragment: Fragment() {
 
         // Calendar Fragment
         scheduleCalendarFm = ScheduleCalenderFragment()
-        childFragmentManager.beginTransaction().add(R.id.fragment_calendar_main, scheduleCalendarFm).addToBackStack(null).commit()
+        diaryCalendarFm = DiaryCalenderFragment()
+
+        childFragmentManager.beginTransaction().replace(R.id.fragment_calendar_main,scheduleCalendarFm).addToBackStack(null).commit()
+
+
+        // toggle button to change
+        binding.toggleButtonToChangeMain.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                binding.buttonAddDiaryMain.visibility = View.VISIBLE
+                binding.buttonAddEventMain.visibility =View.INVISIBLE
+
+                childFragmentManager.beginTransaction().replace(R.id.fragment_calendar_main,diaryCalendarFm).addToBackStack(null).commit()
+
+            }else{
+                binding.buttonAddDiaryMain.visibility = View.INVISIBLE
+                binding.buttonAddEventMain.visibility =View.VISIBLE
+
+                childFragmentManager.beginTransaction().replace(R.id.fragment_calendar_main, scheduleCalendarFm).addToBackStack(null).commit()
+
+            }
+        }
+
+
+
 
         return binding.root
 
