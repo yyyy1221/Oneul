@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_drawer.*
 
 class MainFragment: Fragment() {
 
-    private lateinit var binding:FragmentMainBinding
+    private lateinit var binding: FragmentMainBinding
 
     private lateinit var scheduleCalendarFm:ScheduleCalenderFragment
     private lateinit var diaryCalendarFm:DiaryCalenderFragment
