@@ -9,15 +9,17 @@ import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.oneul.calendar.DiaryCalenderFragment
+import com.example.oneul.calendar.ScheduleCalenderFragment
 import com.example.oneul.databinding.FragmentMainBinding
 import kotlinx.android.synthetic.main.activity_drawer.*
 
 class MainFragment: Fragment() {
 
-    private lateinit var binding:FragmentMainBinding
+    private lateinit var binding: FragmentMainBinding
 
-    private lateinit var scheduleCalendarFm:ScheduleCalenderFragment
-    private lateinit var diaryCalendarFm:DiaryCalenderFragment
+    private lateinit var scheduleCalendarFm: ScheduleCalenderFragment
+    private lateinit var diaryCalendarFm: DiaryCalenderFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +31,8 @@ class MainFragment: Fragment() {
 
         binding.buttonDiary.setOnClickListener {
             findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)
+            val intent = Intent(context, AddDiaryActivity::class.java)
+            startActivity(intent)
         }
 
         binding.buttonSchedule.setOnClickListener {
