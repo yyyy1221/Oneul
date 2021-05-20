@@ -83,18 +83,13 @@ class MainFragment: Fragment() {
             // 프래그먼트 띄워서 거기서 처리해주기
         }
 
-        binding.circles.setOnCheckedChangeListener{ buttonView, checkedId->
+        binding.circlesLine1.setOnCheckedChangeListener{ buttonView, checkedId->
             when(checkedId){
                 R.id.circle1-> Toast.makeText(context,"circle1", Toast.LENGTH_SHORT).show()
                 R.id.circle2-> Toast.makeText(context,"circle2", Toast.LENGTH_SHORT).show()
                 R.id.circle3-> Toast.makeText(context,"circle3", Toast.LENGTH_SHORT).show()
                 R.id.circle4-> Toast.makeText(context,"circle4", Toast.LENGTH_SHORT).show()
                 R.id.circle5-> Toast.makeText(context,"circle5", Toast.LENGTH_SHORT).show()
-                R.id.circle6-> Toast.makeText(context,"circle6", Toast.LENGTH_SHORT).show()
-                R.id.circle7-> Toast.makeText(context,"circle7", Toast.LENGTH_SHORT).show()
-                R.id.circle8-> Toast.makeText(context,"circle8", Toast.LENGTH_SHORT).show()
-
-
             }
         }
         return binding.root
