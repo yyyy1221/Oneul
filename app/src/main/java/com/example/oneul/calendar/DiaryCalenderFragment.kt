@@ -5,17 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.oneul.calendar.decorator.OneDayDecorator
 import com.example.oneul.R
 import com.example.oneul.databinding.FragmentDiaryCalenderBinding
-import com.example.oneul.databinding.FragmentScheduleCalenderBinding
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import java.text.SimpleDateFormat
 
 class DiaryCalenderFragment: Fragment() {
-    // 일정 캘린더, 일기/기분 캘린더
+    // 일기/기분 캘린더
 
     private lateinit var binding: FragmentDiaryCalenderBinding
-    private lateinit var sCalendarView:MaterialCalendarView
+    private lateinit var dCalendarView:MaterialCalendarView
+
+    private lateinit var oneDayDecorator: OneDayDecorator
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,17 +29,22 @@ class DiaryCalenderFragment: Fragment() {
         binding = FragmentDiaryCalenderBinding.inflate(layoutInflater)
 
         // Custom Calendar
-        sCalendarView = binding.diaryCalendarView
+        dCalendarView = binding.diaryCalendarView
 
         // Header
-        sCalendarView.setHeaderTextAppearance(R.style.CalendarHeader)
+        dCalendarView.setHeaderTextAppearance(R.style.CalendarHeader)
         var sf = SimpleDateFormat("MMMM");
 
         // WeekDays
-        sCalendarView.setWeekDayTextAppearance(R.style.CalendarWeekdays)
+        dCalendarView.setWeekDayTextAppearance(R.style.CalendarWeekdays)
 
         // Date
-        sCalendarView.setDateTextAppearance(R.style.CalendarDate)
+        dCalendarView.setDateTextAppearance(R.style.CalendarDate)
+
+        // 오늘 날짜 primary 색깔로
+        oneDayDecorator = OneDayDecorator()
+        dCalendarView.addDecorators(oneDayDecorator)
+
 
 
         return binding.root
