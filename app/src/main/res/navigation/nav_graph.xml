@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/calenderFragment">
+    app:startDestination="@id/MainFragment">
     <fragment
-        android:id="@+id/calenderFragment"
-        android:name="com.example.oneul.CalenderFragment"
-        android:label="CalenderFragment" >
+        android:id="@+id/MainFragment"
+        android:name="com.example.oneul.MainFragment"
+        android:label="MainFragment" >
         <action
             android:id="@+id/action_calenderFragment_to_dailyDiaryFragment"
             app:destination="@id/dailyDiaryFragment" />
