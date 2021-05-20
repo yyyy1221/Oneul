@@ -7,6 +7,6 @@ class AddDiaryActivity : AppCompatActivity() {
     // 일기/기분 추가
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_schedule)
+        setContentView(R.layout.activity_add_diary)
     }
 }

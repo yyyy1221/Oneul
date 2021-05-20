@@ -61,49 +61,53 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_joy" />
+            android:button = "@android:color/transparent"
+            android:foreground="@drawable/radio_button_joy" />
         <RadioButton
             android:id="@+id/radioButton신남"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_enjoy" />
+            android:button = "@android:color/transparent"
+            android:foreground="@drawable/radio_button_enjoy" />
         <RadioButton
             android:id="@+id/radioButton우울"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_gloom" />
+            android:button = "@android:color/transparent"
+            android:foreground="@drawable/radio_button_gloom" />
         <RadioButton
             android:id="@+id/radioButton지침"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_tired" />
+            android:button = "@android:color/transparent"
+            android:foreground="@drawable/radio_button_tired" />
         <RadioButton
             android:id="@+id/radioButton화남"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_angry" />
+            android:button = "@android:color/transparent"
+            android:foreground="@drawable/radio_button_angry" />
         <RadioButton
             android:id="@+id/radioButton그냥"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:button="@drawable/radio_button_just" />
+            android:button = "@android:color/transparent"
+            android:foreground="@drawable/radio_button_just" />
     </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
+        android:id="@+id/input_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="일기를 작성해주세요."
-            android:fontFamily="@font/oneulfont"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginRight="30dp"
+        android:inputType="text"
+        android:fontFamily="@font/oneulfont"
+        android:hint="일기를 작성하세요."
+        android:textColorHint="@color/black" />
 </LinearLayout>
