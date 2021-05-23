@@ -57,6 +57,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytcs-ktx'
+    implementation 'com.google.firebase:firebase-database'
 
     // for calendar
     implementation "com.github.prolificinteractive:material-calendarview:2.0.1"
