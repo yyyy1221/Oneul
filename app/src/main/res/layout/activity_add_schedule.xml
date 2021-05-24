@@ -103,13 +103,15 @@
 <!--                android:layout_below="@+id/text_time_end"-->
 <!--                android:layout_marginTop="10dp"-->
 
-            <Switch
+            <ToggleButton
                 android:id="@+id/switch_all_day"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="42sp"
+                android:layout_height="21sp"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/text_time_end"
                 android:layout_marginTop="10dp"
+                android:textOff=" "
+                android:textOn=" "
                 android:background="@drawable/switch_selector"/>
 
             <TextView
