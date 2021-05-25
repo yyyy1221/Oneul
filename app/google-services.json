@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "980561924018",
+    "project_id": "oneul-e4d39",
+    "storage_bucket": "oneul-e4d39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980561924018:android:1fae0bdea5ff0600909eab",
+        "android_client_info": {
+          "package_name": "com.example.oneul"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980561924018-mvodv6sea8cs49ittjg49g4baasvejs4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.oneul",
+            "certificate_hash": "ac060902dbbb207f11d1c729d94d6ccdb38e55bf"
+          }
+        },
+        {
+          "client_id": "980561924018-pat2itrfi5nql8j0r2nd2vhadek3r27i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZw_NkzoM1z-mIVUqLeJ0hDdiARGmwtWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980561924018-pat2itrfi5nql8j0r2nd2vhadek3r27i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

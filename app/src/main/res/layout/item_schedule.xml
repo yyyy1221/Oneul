@@ -2,37 +2,50 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
-
-    <TextView
-        android:id="@+id/text_time_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="오후 3:00"
-        style="@style/text_style"/>
-
-    <TextView
-        android:id="@+id/text_time_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_time_start"
-        android:text="오후 3:00"
-        style="@style/text_style"/>
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:gravity="center_vertical">
 
     <LinearLayout
-        android:id="@+id/linear_layout_line"
-        android:layout_width="1dp"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/text_time_end"
+        android:id="@+id/layout_time"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/text_time_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오후 3:00"
+            style="@style/text_style"/>
+
+        <TextView
+            android:id="@+id/text_time_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오후 3:00"
+            style="@style/text_style"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_line"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@+id/layout_time"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="@color/primary"/>
+        android:background="@color/primary"
+        android:orientation="vertical"/>
 
     <TextView
         android:id="@+id/text_schedule_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/linear_layout_line"
+        android:layout_toEndOf="@+id/layout_line"
         android:layout_centerVertical="true"
         android:text="소프 회의"
         style="@style/text_style"/>
