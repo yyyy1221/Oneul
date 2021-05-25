@@ -9,15 +9,17 @@ import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.oneul.calendar.DiaryCalenderFragment
+import com.example.oneul.calendar.ScheduleCalenderFragment
 import com.example.oneul.databinding.FragmentMainBinding
 import kotlinx.android.synthetic.main.activity_drawer.*
 
 class MainFragment: Fragment() {
 
-    private lateinit var binding:FragmentMainBinding
+    private lateinit var binding: FragmentMainBinding
 
-    private lateinit var scheduleCalendarFm:ScheduleCalenderFragment
-    private lateinit var diaryCalendarFm:DiaryCalenderFragment
+    private lateinit var scheduleCalendarFm: ScheduleCalenderFragment
+    private lateinit var diaryCalendarFm: DiaryCalenderFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,16 +31,20 @@ class MainFragment: Fragment() {
 
         binding.buttonDiary.setOnClickListener {
             findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)
-//            val intent = Intent(context, AddDiaryActivity::class.java)
-//            startActivity(intent)
         }
 
         binding.buttonSchedule.setOnClickListener {
             findNavController().navigate(R.id.action_calenderFragment_to_dailyScheduleFragment)
         }
 
+        binding.buttonAddDiaryMain.setOnClickListener {
+            val intent= Intent(context,AddDiaryActivity::class.java)
+            startActivity(intent)
+            // 데이터 가져와야하므로 추후에 startResultActivity로 수정해야함
+        }
+
         binding.buttonAddEventMain.setOnClickListener {
-            var intent= Intent(context,AddScheduleActivity::class.java)
+            val intent= Intent(context,AddScheduleActivity::class.java)
             startActivity(intent)
             // 데이터 가져와야하므로 추후에 startResultActivity로 수정해야함
         }
@@ -81,17 +87,13 @@ class MainFragment: Fragment() {
             // 프래그먼트 띄워서 거기서 처리해주기
         }
 
-        binding.circles.setOnCheckedChangeListener{ buttonView, checkedId->
+        binding.circlesLine1.setOnCheckedChangeListener{ buttonView, checkedId->
             when(checkedId){
                 R.id.circle1-> Toast.makeText(context,"circle1", Toast.LENGTH_SHORT).show()
                 R.id.circle2-> Toast.makeText(context,"circle2", Toast.LENGTH_SHORT).show()
                 R.id.circle3-> Toast.makeText(context,"circle3", Toast.LENGTH_SHORT).show()
                 R.id.circle4-> Toast.makeText(context,"circle4", Toast.LENGTH_SHORT).show()
                 R.id.circle5-> Toast.makeText(context,"circle5", Toast.LENGTH_SHORT).show()
-                R.id.circle6-> Toast.makeText(context,"circle6", Toast.LENGTH_SHORT).show()
-                R.id.circle7-> Toast.makeText(context,"circle7", Toast.LENGTH_SHORT).show()
-                R.id.circle8-> Toast.makeText(context,"circle8", Toast.LENGTH_SHORT).show()
-
             }
         }
         return binding.root

@@ -227,6 +227,7 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="9dp"
 
                 android:drawableRight="@drawable/ic_checkbt_white"
                 android:drawablePadding="15dp"
@@ -236,69 +237,87 @@
                 android:textColor="@color/white"
                 android:textSize="25dp" />
 
+
             <RadioGroup
-                android:id="@+id/circles"
-                android:layout_width="wrap_content"
+                android:id="@+id/circles_line1"
+                android:layout_width="334dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingLeft="50dp">
 
                 <RadioButton
                     android:id="@+id/circle1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:button="@android:color/transparent"
+                    android:layout_marginRight="15dp"
                     android:foreground="@drawable/selector1"
-                    android:padding="2dp"
-                    />
-
-                <RadioButton
-                    android:id="@+id/circle2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:foreground="@drawable/selector2" />
-
-                <RadioButton
-                    android:id="@+id/circle3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:foreground="@drawable/selector3" />
-
-                <RadioButton
-                    android:id="@+id/circle4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:foreground="@drawable/selector4" />
+                    android:padding="2dp" />
 
                 <RadioButton
                     android:id="@+id/circle5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:foreground="@drawable/selector5" />
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:button="@android:color/transparent"
+                    android:foreground="@drawable/selector5"
+                    android:padding="2dp" />
 
                 <RadioButton
+                    android:id="@+id/circle2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:button="@android:color/transparent"
+                    android:layout_marginRight="15dp"
+                    android:foreground="@drawable/selector2"
+                    android:padding="2dp" />
+
+                <RadioButton
+                    android:id="@+id/circle3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:button="@android:color/transparent"
+                    android:layout_marginRight="15dp"
+                    android:foreground="@drawable/selector3"
+                    android:padding="2dp" />
+
+                <RadioButton
+                    android:id="@+id/circle4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:button="@android:color/transparent"
+                    android:layout_marginRight="15dp"
+                    android:foreground="@drawable/selector4"
+                    android:padding="2dp" />
+
+                <!--
+                <RadioButton
                     android:id="@+id/circle6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:foreground="@drawable/selector6" />
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:button="@android:color/transparent"
+                    android:layout_marginRight="15dp"
+                    android:foreground="@drawable/selector6"
+                    android:padding="2dp" />
 
                 <RadioButton
                     android:id="@+id/circle7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:foreground="@drawable/selector7" />
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:button="@android:color/transparent"
+                    android:layout_marginRight="15dp"
+                    android:foreground="@drawable/selector7"
+                    android:padding="2dp" />
 
                 <RadioButton
                     android:id="@+id/circle8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:foreground="@drawable/selector8" />
-
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:button="@android:color/transparent"
+                    android:layout_marginRight="15dp"
+                    android:foreground="@drawable/selector8"
+                    android:padding="2dp" />
+-->
             </RadioGroup>
 
 
