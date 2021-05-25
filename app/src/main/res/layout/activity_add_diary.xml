@@ -84,12 +84,13 @@
             android:layout_weight="1"
             android:button = "@android:color/transparent"
             android:foreground="@drawable/radio_button_tired" />
+
         <RadioButton
             android:id="@+id/radioButton화남"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button = "@android:color/transparent"
+            android:button="@android:color/transparent"
             android:foreground="@drawable/radio_button_angry" />
         <RadioButton
             android:id="@+id/radioButton그냥"

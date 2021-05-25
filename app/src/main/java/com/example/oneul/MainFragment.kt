@@ -29,8 +29,8 @@ class MainFragment: Fragment() {
 
         binding.buttonDiary.setOnClickListener {
             findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)
-            val intent = Intent(context, AddDiaryActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(context, AddDiaryActivity::class.java)
+//            startActivity(intent)
         }
 
         binding.buttonSchedule.setOnClickListener {
@@ -91,7 +91,6 @@ class MainFragment: Fragment() {
                 R.id.circle6-> Toast.makeText(context,"circle6", Toast.LENGTH_SHORT).show()
                 R.id.circle7-> Toast.makeText(context,"circle7", Toast.LENGTH_SHORT).show()
                 R.id.circle8-> Toast.makeText(context,"circle8", Toast.LENGTH_SHORT).show()
-
 
             }
         }
