@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_app_oneul_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oneul">
-        <activity android:name=".DrawerActivity"/>
+        <activity android:name=".AddDiaryActivity"/>
+        <activity android:name=".AddScheduleActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddDiaryActivity"/>
     </application>
 
     <!--갤러리 권한-->
