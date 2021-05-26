@@ -73,14 +73,16 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="12dp"
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="내 캘린더"
-                    android:textSize="18dp"
-                    android:textColor="@color/dark_beige"
                     android:layout_centerInParent="true"
-                    />
+                    android:background="@color/white"
+                    android:text="내 캘린더"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/dark_beige"
+                    android:textSize="18dp" />
             </RelativeLayout>
 
 
@@ -193,7 +195,7 @@
                 android:text="캘린더 목록"
                 android:textSize="45dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/menu_myCalandar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -201,13 +203,157 @@
                 android:layout_marginBottom="20dp"
                 android:background="@color/menu_myCalandar"
 
-                android:fontFamily="@font/oneulfont"
-                android:gravity="left"
+                android:backgroundTint="@color/menu_myCalandar"
+                android:gravity="left|center"
                 android:paddingLeft="40dp"
                 android:text="내 캘린더"
+                android:textColor="@color/white"
                 android:textSize="35dp" />
 
-            <Button
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/temp_calandar1"
+                    android:layout_width="229dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+
+                    android:gravity="left|center"
+                    android:paddingLeft="40dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/minusBt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:foreground="@drawable/ic_minusbt"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/temp_calandar2"
+                    android:layout_width="229dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="40dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/minusBt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:foreground="@drawable/ic_minusbt"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/temp_calandar3"
+                    android:layout_width="229dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="40dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/minusBt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:foreground="@drawable/ic_minusbt"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/temp_calandar4"
+                    android:layout_width="229dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="40dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/minusBt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:foreground="@drawable/ic_minusbt"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/temp_calandar5"
+                    android:layout_width="229dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="40dp"
+                    android:text="Button"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/minusBt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:foreground="@drawable/ic_minusbt"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/add_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
@@ -215,7 +361,7 @@
 
                 android:baselineAligned="false"
                 android:drawableLeft="@drawable/ic_plusbtwhite"
-                android:drawablePadding="1dp"
+                android:drawablePadding="7dp"
                 android:fontFamily="@font/oneulfont"
                 android:paddingLeft="20dp"
 
@@ -223,102 +369,92 @@
                 android:textColor="@color/white"
                 android:textSize="30dp" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="9dp"
+            <LinearLayout
+                android:id="@+id/add_menu_content"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-                android:drawableRight="@drawable/ic_checkbt_white"
-                android:drawablePadding="15dp"
-                android:fontFamily="@font/oneulfont"
-                android:paddingLeft="50dp"
-                android:text="캘린더 이름(최대 10자)"
-                android:textColor="@color/white"
-                android:textSize="25dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
+                    <EditText
+                        android:id="@+id/input_calandarname"
+                        android:layout_width="164dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="5dp"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/oneulfont"
+                        android:hint="캘린더 이름 (최대 10자)"
+                        android:inputType="text"
+                        android:maxLength="10"
+                        android:textColorHint="@color/white" />
 
-            <RadioGroup
-                android:id="@+id/circles_line1"
-                android:layout_width="334dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingLeft="50dp">
+                    <ImageButton
+                        android:id="@+id/calandar_add_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_checkbt_white" />
+                </LinearLayout>
 
-                <RadioButton
-                    android:id="@+id/circle1"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:button="@android:color/transparent"
-                    android:layout_marginRight="15dp"
-                    android:foreground="@drawable/selector1"
-                    android:padding="2dp" />
+                <RadioGroup
+                    android:id="@+id/circles_line"
+                    android:layout_width="334dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="50dp">
 
-                <RadioButton
-                    android:id="@+id/circle5"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="15dp"
-                    android:button="@android:color/transparent"
-                    android:foreground="@drawable/selector5"
-                    android:padding="2dp" />
+                    <RadioButton
+                        android:id="@+id/circle1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:button="@android:color/transparent"
+                        android:foreground="@drawable/selector1"
+                        android:padding="2dp" />
 
-                <RadioButton
-                    android:id="@+id/circle2"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:button="@android:color/transparent"
-                    android:layout_marginRight="15dp"
-                    android:foreground="@drawable/selector2"
-                    android:padding="2dp" />
+                    <RadioButton
+                        android:id="@+id/circle5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:button="@android:color/transparent"
+                        android:foreground="@drawable/selector5"
+                        android:padding="2dp" />
 
-                <RadioButton
-                    android:id="@+id/circle3"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:button="@android:color/transparent"
-                    android:layout_marginRight="15dp"
-                    android:foreground="@drawable/selector3"
-                    android:padding="2dp" />
+                    <RadioButton
+                        android:id="@+id/circle2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:button="@android:color/transparent"
+                        android:foreground="@drawable/selector2"
+                        android:padding="2dp" />
 
-                <RadioButton
-                    android:id="@+id/circle4"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:button="@android:color/transparent"
-                    android:layout_marginRight="15dp"
-                    android:foreground="@drawable/selector4"
-                    android:padding="2dp" />
+                    <RadioButton
+                        android:id="@+id/circle3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:button="@android:color/transparent"
+                        android:foreground="@drawable/selector3"
+                        android:padding="2dp" />
 
-                <!--
-                <RadioButton
-                    android:id="@+id/circle6"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:button="@android:color/transparent"
-                    android:layout_marginRight="15dp"
-                    android:foreground="@drawable/selector6"
-                    android:padding="2dp" />
+                    <RadioButton
+                        android:id="@+id/circle4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:button="@android:color/transparent"
+                        android:foreground="@drawable/selector4"
+                        android:padding="2dp" />
 
-                <RadioButton
-                    android:id="@+id/circle7"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:button="@android:color/transparent"
-                    android:layout_marginRight="15dp"
-                    android:foreground="@drawable/selector7"
-                    android:padding="2dp" />
-
-                <RadioButton
-                    android:id="@+id/circle8"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:button="@android:color/transparent"
-                    android:layout_marginRight="15dp"
-                    android:foreground="@drawable/selector8"
-                    android:padding="2dp" />
--->
-            </RadioGroup>
+                </RadioGroup>
+            </LinearLayout>
 
 
         </LinearLayout>
