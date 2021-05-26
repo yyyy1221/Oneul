@@ -24,7 +24,7 @@ class DailyScheduleFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = FragmentDailyScheduleBinding.inflate(layoutInflater)
         val view: View = binding.root
-        val dialog = Dialog(requireContext(), R.style.viewpager_dialog)
+        val dialog = Dialog(requireContext(), R.style.Viewpager_dialog)
 
         initViewpager(view)
         dialog.setContentView(view)

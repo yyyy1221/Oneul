@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="materialCalendarTheme">@style/DatePicker</item>
 
 
     <!-- Font -->
@@ -23,11 +24,21 @@
 
     </style>
 
-    <style name="viewpager_dialog">
+    <style name="Viewpager_dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/transparent_blak</item>
         <item name="android:background">@color/transparent_blak</item>
+    </style>
+
+    <style name="DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="textAppearanceHeadline4">@style/head_text_style</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">16dp</item>
     </style>
 
 </resources>
