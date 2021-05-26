@@ -56,9 +56,12 @@ class DiaryCalenderFragment: Fragment() {
         oneDayDecorator = OneDayDecorator()
         //dCalendarView.addDecorators(oneDayDecorator)
 
+        // diary icon 보이게
         diaryDecorator = DiaryDecorator()
         dCalendarView.addDecorators(diaryDecorator)
 
+
+        //todo 날짜 누르면 일정 볼 수 있게
 
 
         return binding.root
