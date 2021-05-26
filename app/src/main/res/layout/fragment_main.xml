@@ -193,19 +193,10 @@
                 android:text="캘린더 목록"
                 android:textSize="45dp" />
 
-            <Button
-                android:id="@+id/menu_myCalandar"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_calender"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/menu_myCalandar"
-
-                android:fontFamily="@font/oneulfont"
-                android:gravity="left"
-                android:paddingLeft="40dp"
-                android:text="내 캘린더"
-                android:textSize="35dp" />
+                android:layout_height="wrap_content"/>
 
             <Button
                 android:id="@+id/add_menu"

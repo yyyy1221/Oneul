@@ -1,4 +1,4 @@
-package com.example.oneul.model
+package com.example.oneul.data
 
 import android.graphics.drawable.Drawable
 import com.prolificinteractive.materialcalendarview.CalendarDay

@@ -1,4 +1,4 @@
-package com.example.oneul.model
+package com.example.oneul.data
 
 data class MoodDTO (
     var id: String? = null,

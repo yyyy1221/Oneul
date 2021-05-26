@@ -1,6 +1,4 @@
-package com.example.oneul.model
-
-import androidx.compose.ui.text.input.DeleteAllCommand
+package com.example.oneul.data
 
 data class ScheduleDTO (
     var id: String? = null,
