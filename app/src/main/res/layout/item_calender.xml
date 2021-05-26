@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_myCalandar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/menu_myCalandar"
+        android:fontFamily="@font/oneulfont"
+        android:gravity="left"
+        android:paddingLeft="40dp"
+        android:text="내 캘린더"
+        android:textSize="35dp" />
+
+</LinearLayout>
