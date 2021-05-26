@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.oneul.config.MyContext
+import com.example.oneul.data.AppDatabase
+import com.example.oneul.data.CalenderRepository
 import com.example.oneul.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.fragment_main.*
 
