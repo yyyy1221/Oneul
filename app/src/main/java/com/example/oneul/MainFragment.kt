@@ -35,7 +35,8 @@ class MainFragment: Fragment() {
     private lateinit var diaryCalendarFm: DiaryCalenderFragment
 
     private val mainViewModel: MainViewModel by viewModels {
-        MainViewModelFactory((activity?.application as Application).repository)
+        val app = activity?.application as Application
+        MainViewModelFactory(app.calenderRepository, app.diaryRepository)
     }
 
     override fun onCreateView(

@@ -8,10 +8,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = arrayOf(Calender::class), version = 1, exportSchema = false)
+@Database(entities = [Calender::class, Diary::class], version = 1, exportSchema = false)
 public abstract class AppDatabase : RoomDatabase() {
-
     abstract fun calenderDao(): CalenderDao
+    abstract fun diaryDao(): DiaryDao
 
     // 앱 설치시마다 데이터 초기화
     private class AppDatabaseCallback(
@@ -22,15 +22,17 @@ public abstract class AppDatabase : RoomDatabase() {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    populationDatabase(database.calenderDao())
+                    populationDatabase(database.calenderDao(), database.diaryDao())
                 }
             }
         }
 
-        suspend fun populationDatabase(calenderDao: CalenderDao) {
+        suspend fun populationDatabase(calenderDao: CalenderDao, diaryDao: DiaryDao) {
             calenderDao.deleteAll()
             var mainCalender = Calender("나의 캘린더", 0)
             calenderDao.insert(mainCalender)
+
+            diaryDao.deleteAll()
         }
     }
 
