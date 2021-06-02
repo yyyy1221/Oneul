@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.oneul.calendar.decorator.OneDayDecorator
 import com.example.oneul.R
 import com.example.oneul.databinding.FragmentDiaryCalenderBinding
@@ -61,7 +63,11 @@ class DiaryCalenderFragment: Fragment() {
         dCalendarView.addDecorators(diaryDecorator)
 
 
-        //todo 날짜 누르면 일정 볼 수 있게
+        //날짜 누르면 일기 볼 수 있게
+        dCalendarView.setOnDateChangedListener { widget, date, selected ->
+            Toast.makeText(context,date.toString(),Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)
+        }
 
 
         return binding.root
