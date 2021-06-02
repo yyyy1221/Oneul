@@ -37,4 +37,5 @@ class DiaryDecorator():DayViewDecorator{
 
     }
 
+
 }
