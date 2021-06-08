@@ -1,6 +1,6 @@
 package com.example.oneul.calendar
 
-import DiaryDecorator
+//import DiaryDecorator
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.oneul.calendar.decorator.OneDayDecorator
 import com.example.oneul.R
+import com.example.oneul.calendar.decorator.DiaryDecorator
 import com.example.oneul.databinding.FragmentDiaryCalenderBinding
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter
