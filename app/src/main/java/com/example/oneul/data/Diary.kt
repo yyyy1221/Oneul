@@ -1,11 +1,8 @@
 package com.example.oneul.data
 
-import android.graphics.drawable.Drawable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.prolificinteractive.materialcalendarview.CalendarDay
-import java.util.*
 
 @Entity(tableName = "diary_table")
 data class Diary(
