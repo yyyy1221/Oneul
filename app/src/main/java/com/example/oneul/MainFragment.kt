@@ -1,10 +1,12 @@
 package com.example.oneul
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.core.view.GravityCompat
@@ -108,17 +110,59 @@ class MainFragment: Fragment() {
 //            //drawer.closeDrawer(GravityCompat.START) //드로어 닫기
 //        }
         binding.addMenu.setOnClickListener{
-            // 캘린더 추가하기
-            // 프래그먼트 띄워서 거기서 처리해주기
+            if(binding.addMenuContent.visibility==View.GONE){
+                binding.addMenuContent.visibility=View.VISIBLE
+            }
+            else{
+                binding.addMenuContent.visibility=View.GONE
+            }
         }
 
-        binding.circlesLine1.setOnCheckedChangeListener{ buttonView, checkedId->
+        var value = 1
+        var temp:String="#ffbcaf"
+        binding.calandarAddButton.setOnClickListener{
+            when(value){
+                1 ->  {
+                    binding.tempCalandar1.visibility=View.VISIBLE
+                    binding.tempCalandar1.setText(input_calandarname.text.toString())
+                    val color:Int=binding.circlesLine.checkedRadioButtonId
+                    binding.tempCalandar1.setBackgroundColor(Color.parseColor(temp));
+                }
+                2 ->  {
+                    binding.tempCalandar2.visibility=View.VISIBLE
+                    binding.tempCalandar2.setText(input_calandarname.text.toString())
+                    val color:Int=binding.circlesLine.checkedRadioButtonId
+                    binding.tempCalandar2.setBackgroundColor(Color.parseColor(temp));
+                }
+                3 ->  {
+                    binding.tempCalandar3.visibility=View.VISIBLE
+                    binding.tempCalandar3.setText(input_calandarname.text.toString())
+                    val color:Int=binding.circlesLine.checkedRadioButtonId
+                    binding.tempCalandar3.setBackgroundColor(Color.parseColor(temp));
+                }
+                4 ->  {
+                    binding.tempCalandar4.visibility=View.VISIBLE
+                    binding.tempCalandar4.setText(input_calandarname.text.toString())
+                    val color:Int=binding.circlesLine.checkedRadioButtonId
+                    binding.tempCalandar4.setBackgroundColor(Color.parseColor(temp));
+                }
+                5 ->  {
+                    binding.tempCalandar5.visibility=View.VISIBLE
+                    binding.tempCalandar5.setText(input_calandarname.text.toString())
+                    val color:Int=binding.circlesLine.checkedRadioButtonId
+                    binding.tempCalandar5.setBackgroundColor(Color.parseColor(temp));
+                }
+            }
+            value++
+            binding.addMenuContent.visibility=View.GONE
+        }
+        binding.circlesLine.setOnCheckedChangeListener{ buttonView, checkedId->
             when(checkedId){
-                R.id.circle1-> Toast.makeText(context,"circle1", Toast.LENGTH_SHORT).show()
-                R.id.circle2-> Toast.makeText(context,"circle2", Toast.LENGTH_SHORT).show()
-                R.id.circle3-> Toast.makeText(context,"circle3", Toast.LENGTH_SHORT).show()
-                R.id.circle4-> Toast.makeText(context,"circle4", Toast.LENGTH_SHORT).show()
-                R.id.circle5-> Toast.makeText(context,"circle5", Toast.LENGTH_SHORT).show()
+                R.id.circle1-> temp="#ffbcaf"
+                R.id.circle2-> temp="#FDF372"
+                R.id.circle3-> temp="#BBDEFB"
+                R.id.circle4-> temp="#E1BEE7"
+                R.id.circle5-> temp="#FAD59C"
             }
         }
 
