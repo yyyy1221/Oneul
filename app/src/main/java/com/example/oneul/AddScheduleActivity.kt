@@ -37,5 +37,9 @@ class AddScheduleActivity : AppCompatActivity() {
         binding.textDateStart.setOnClickListener {
             datePicker.show(supportFragmentManager, "tag")
         }
+
+        binding.imageCheck.setOnClickListener {
+            // TODO: 2021-06-08
+        }
     }
 }
