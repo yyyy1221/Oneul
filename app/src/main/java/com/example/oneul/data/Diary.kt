@@ -1,5 +1,6 @@
 package com.example.oneul.data
 
+import android.graphics.drawable.Drawable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

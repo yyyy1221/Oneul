@@ -1,6 +1,6 @@
 package com.example.oneul.calendar
 
-import EventDecorator
+//import EventDecorator
 import android.os.Build
 import android.os.Bundle
 import android.os.Parcel
@@ -29,7 +29,7 @@ class ScheduleCalenderFragment: Fragment() {
     private lateinit var sCalendarView:MaterialCalendarView
 
     private lateinit var oneDayDecorator: OneDayDecorator
-    private lateinit var eventDecorator: EventDecorator
+    //private lateinit var eventDecorator: EventDecorator
 
     private lateinit var dates: HashSet<CalendarDay>
 
