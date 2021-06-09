@@ -19,7 +19,7 @@ class DiaryDecorator():DayViewDecorator {
     init {
         date = CalendarDay.today()
         //na = Diary(date = date.toString(), mood = MyContext.context.getDrawable(R.drawable.joy),id="1")
-        na = Diary(date = date.toString(), mood = R.drawable.joy,id="1")
+        na = Diary(date = date.toString(), mood = R.drawable.joy)
     }
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {

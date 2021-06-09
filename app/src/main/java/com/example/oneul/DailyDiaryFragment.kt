@@ -16,6 +16,8 @@ import com.example.oneul.databinding.FragmentDailyDiaryBinding
 import com.example.oneul.viewmodel.DiaryViewModel
 import com.example.oneul.viewmodel.DiaryViewModelFactory
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.play.core.install.model.ActivityResult
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_daily_diary.*
@@ -24,11 +26,7 @@ import kotlinx.android.synthetic.main.fragment_daily_diary.view.*
 class DailyDiaryFragment : Fragment() {
 
     private lateinit var binding: FragmentDailyDiaryBinding
-    private val diaryViewModel: DiaryViewModel by viewModels{
-        val app = activity?.application as Application
-        DiaryViewModelFactory(app.diaryRepository)
-    }
-    private lateinit var diaryList : HashSet<Diary>
+    private lateinit var diaryViewModel: DiaryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +35,20 @@ class DailyDiaryFragment : Fragment() {
 
     ): View? {
         val view = inflater.inflate(R.layout.fragment_daily_diary, container, false)
+
+        diaryViewModel = ViewModelProvider(requireActivity()).get(DiaryViewModel::class.java)
+
+        diaryViewModel.currentDiary.observe(viewLifecycleOwner, Observer { diary ->
+            view.textView.text = diary.date
+            view.textView2.text = diary.diary
+            view.imageView6.setImageDrawable(diary.mood?.let { requireContext().getDrawable(it) })
+            view.imageView4.setImageURI(diary.imagesUrl?.toUri())
+        })
+
+        view.imageButton.setOnClickListener {
+            activity?.onBackPressed()
+        }
+
         view.imageView4.setOnClickListener() {
             var intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
@@ -50,6 +62,8 @@ class DailyDiaryFragment : Fragment() {
             if(requestCode == 1){
                 var imageUri : Uri? = data?.data
                 imageView4.setImageURI(imageUri)
+                diaryViewModel.currentDiary.value?.imagesUrl = imageUri.toString()
+                diaryViewModel.notifyCurrentDiary()
             }
         }
     }

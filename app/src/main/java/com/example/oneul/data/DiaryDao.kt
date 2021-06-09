@@ -12,10 +12,10 @@ interface DiaryDao {
     suspend fun insert(diary: Diary)
 
     @Update
-    fun updateDiary(diary: Diary)
+    suspend fun updateDiary(diary: Diary)
 
     @Delete
-    fun deleteDiary(diary: Diary)
+    suspend fun deleteDiary(diary: Diary)
 
     @Query("DELETE FROM diary_table")
     suspend fun deleteAll()

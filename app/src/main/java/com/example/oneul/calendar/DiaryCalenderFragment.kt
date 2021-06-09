@@ -9,15 +9,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.oneul.Application
 import com.example.oneul.calendar.decorator.OneDayDecorator
 import com.example.oneul.R
 import com.example.oneul.calendar.decorator.DiaryDecorator
+import com.example.oneul.data.Diary
 import com.example.oneul.databinding.FragmentDiaryCalenderBinding
+import com.example.oneul.viewmodel.DiaryViewModel
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
-import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter
-import com.prolificinteractive.materialcalendarview.format.TitleFormatter
-import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
 
 class DiaryCalenderFragment: Fragment() {
@@ -29,6 +30,8 @@ class DiaryCalenderFragment: Fragment() {
     private lateinit var oneDayDecorator: OneDayDecorator
     private lateinit var diaryDecorator: DiaryDecorator
 
+    private lateinit var diaryViewModel: DiaryViewModel
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +39,9 @@ class DiaryCalenderFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        val app = activity?.application as Application
+
+        diaryViewModel = ViewModelProvider(requireActivity()).get(DiaryViewModel::class.java)
 
         binding = FragmentDiaryCalenderBinding.inflate(layoutInflater)
 
@@ -66,6 +72,11 @@ class DiaryCalenderFragment: Fragment() {
 
         //날짜 누르면 일기 볼 수 있게
         dCalendarView.setOnDateChangedListener { widget, date, selected ->
+            if(diaryViewModel.setCurrentDiary(date.toString()) == false) {
+                val diary = Diary(date = date.toString())
+                diaryViewModel.setCurrentDiary(diary)
+            }
+
             Toast.makeText(context,date.toString(),Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)
         }

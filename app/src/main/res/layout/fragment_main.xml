@@ -143,27 +143,6 @@
 
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/button_schedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="daily schedule"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="50dp"
-            />
-
-        <Button
-            android:id="@+id/button_diary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="daily diray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="100dp"
-            />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
