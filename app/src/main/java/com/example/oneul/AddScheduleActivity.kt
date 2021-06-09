@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Pair
 import com.example.oneul.databinding.ActivityAddScheduleBinding
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 
 class AddScheduleActivity : AppCompatActivity() {
     // 일정 추가
@@ -15,6 +17,10 @@ class AddScheduleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddScheduleBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.imageClose.setOnClickListener {
+            onBackPressed()
+        }
 
         val datePicker = MaterialDatePicker.Builder.datePicker()
             .setTitleText("")
@@ -27,15 +33,19 @@ class AddScheduleActivity : AppCompatActivity() {
                 Pair(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())
             )
 
-//        val picker = MaterialTimePicker.Builder()
-//                .setTimeFormat(TimeFormat.CLOCK_12H)
-//                .setHour(12)
-//                .setMinute(10)
-//                .setTitle("Select Appointment time")
-//                .build()
+        val timePicker = MaterialTimePicker.Builder()
+                .setTimeFormat(TimeFormat.CLOCK_12H)
+                .setHour(12)
+                .setMinute(10)
+                .setTitleText("")
+                .build()
 
         binding.textDateStart.setOnClickListener {
             datePicker.show(supportFragmentManager, "tag")
+        }
+
+        binding.imageCheck.setOnClickListener {
+            // TODO: 2021-06-08
         }
     }
 }

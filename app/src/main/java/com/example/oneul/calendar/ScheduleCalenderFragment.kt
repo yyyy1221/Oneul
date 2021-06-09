@@ -1,6 +1,6 @@
 package com.example.oneul.calendar
 
-import EventDecorator
+//import EventDecorator
 import android.os.Build
 import android.os.Bundle
 import android.os.Parcel
@@ -29,7 +29,7 @@ class ScheduleCalenderFragment: Fragment() {
     private lateinit var sCalendarView:MaterialCalendarView
 
     private lateinit var oneDayDecorator: OneDayDecorator
-    private lateinit var eventDecorator: EventDecorator
+    //private lateinit var eventDecorator: EventDecorator
 
     private lateinit var dates: HashSet<CalendarDay>
 
@@ -61,6 +61,8 @@ class ScheduleCalenderFragment: Fragment() {
         sCalendarView.addDecorators(oneDayDecorator)
 
 
+        //todo Calendar day list 어떻게 만들지ㅜ
+
         // 일정 표시되게
         var parcel = Parcel.obtain()
         parcel.writeInt(2021)
@@ -73,6 +75,8 @@ class ScheduleCalenderFragment: Fragment() {
         //var d = LocalDate.of(2021, 5, 5)
         //var day = CalendarDay(d as Parcel)
         //dates.add(day)
+
+        //var day = CalendarDay(2021,5,5)
 
         //eventDecorator = EventDecorator(dates)
 

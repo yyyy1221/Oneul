@@ -11,13 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:tint="#23FFFFFF"
         app:srcCompat="@drawable/ic_button_circle_arrow_left" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         app:srcCompat="@drawable/ic_addimage" />
 
     <LinearLayout
@@ -33,7 +32,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/oneulfont"
-            android:text="2021년 5월 12일(수)"
+            android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20dp" />
 

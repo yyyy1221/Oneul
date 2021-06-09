@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#FFFFFF"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +28,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_date_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
@@ -50,6 +52,7 @@
         android:textSize="25dp" />
 
     <RadioGroup
+        android:id="@+id/radio_group_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -57,42 +60,43 @@
         android:layout_marginRight="30dp">
 
         <RadioButton
-            android:id="@+id/radioButton기쁨"
+            android:id="@+id/radio_button_joy"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button = "@android:color/transparent"
             android:foreground="@drawable/radio_button_joy" />
         <RadioButton
-            android:id="@+id/radioButton신남"
+            android:id="@+id/radio_button_enjoy"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button = "@android:color/transparent"
             android:foreground="@drawable/radio_button_enjoy" />
         <RadioButton
-            android:id="@+id/radioButton우울"
+            android:id="@+id/radio_button_gloom"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button = "@android:color/transparent"
             android:foreground="@drawable/radio_button_gloom" />
         <RadioButton
-            android:id="@+id/radioButton지침"
+            android:id="@+id/radio_button_tired"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button = "@android:color/transparent"
             android:foreground="@drawable/radio_button_tired" />
+
         <RadioButton
-            android:id="@+id/radioButton화남"
+            android:id="@+id/radio_button_angry"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:button = "@android:color/transparent"
+            android:button="@android:color/transparent"
             android:foreground="@drawable/radio_button_angry" />
         <RadioButton
-            android:id="@+id/radioButton그냥"
+            android:id="@+id/radio_button_just"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
