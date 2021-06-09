@@ -32,7 +32,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/oneulfont"
-            android:text=""
+            android:text="2021년 6월 9일"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20dp" />
 
@@ -40,7 +40,7 @@
             android:id="@+id/imageView6"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/enjoy" />
+            app:srcCompat="@drawable/joy" />
     </LinearLayout>
 
     <TextView
@@ -50,6 +50,6 @@
         android:fontFamily="@font/oneulfont"
         android:layout_marginLeft="20dp"
         android:textSize="20dp"
-        android:text="주영이랑 양대창 먹을꺼다 룰루~~~~\n신난당~!~!" />
+        android:text="사망년 화이팅!" />
 
 </LinearLayout>

@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.oneul.Application
@@ -19,6 +21,7 @@ import com.example.oneul.data.Diary
 import com.example.oneul.databinding.FragmentDiaryCalenderBinding
 import com.example.oneul.viewmodel.DiaryViewModel
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
+import kotlinx.android.synthetic.main.fragment_daily_diary.view.*
 import java.time.format.DateTimeFormatter
 
 class DiaryCalenderFragment: Fragment() {
@@ -63,19 +66,18 @@ class DiaryCalenderFragment: Fragment() {
 
         // 오늘 날짜 primary 색깔로
         oneDayDecorator = OneDayDecorator()
-        //dCalendarView.addDecorators(oneDayDecorator)
+        dCalendarView.addDecorators(oneDayDecorator)
 
-        // diary icon 보이게
-        diaryDecorator = DiaryDecorator()
-        dCalendarView.addDecorators(diaryDecorator)
-
+        diaryViewModel.currentDiary.observe(viewLifecycleOwner, Observer { diary ->
+            diaryDecorator = DiaryDecorator()
+            // diary icon 보이게
+            dCalendarView.addDecorators(diaryDecorator)
+        })
 
         //날짜 누르면 일기 볼 수 있게
         dCalendarView.setOnDateChangedListener { widget, date, selected ->
-            if(diaryViewModel.setCurrentDiary(date.toString()) == false) {
-                val diary = Diary(date = date.toString())
-                diaryViewModel.setCurrentDiary(diary)
-            }
+            val diary = Diary(date = date.toString())
+            diaryViewModel.setCurrentDiary(diary)
 
             Toast.makeText(context,date.toString(),Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_calenderFragment_to_dailyDiaryFragment)

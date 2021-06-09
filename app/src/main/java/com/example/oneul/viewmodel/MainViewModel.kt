@@ -11,6 +11,9 @@ class MainViewModel(private val calenderRepository: CalenderRepository, private 
     val allCalenders: LiveData<List<Calender>> = calenderRepository.allCalenders.asLiveData()
     val allDiaries: LiveData<List<Diary>> = diaryRepository.allDiaries.asLiveData()
 
+    private val _currentSchedule = MutableLiveData<Diary>()
+    //val currentSchedule: LiveData<> = _currentSchedule
+
     fun insertCalender(calender: Calender) = viewModelScope.launch {
         calenderRepository.insert(calender)
     }

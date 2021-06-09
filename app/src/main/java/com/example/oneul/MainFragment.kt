@@ -50,8 +50,9 @@ class MainFragment: Fragment() {
 
     private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
-            val diary = result.data!!.getParcelableExtra<Diary>("diary")!!
-            diaryViewModel.insert(diary)
+//            val diary = result.data!!.getParcelableExtra<Diary>("diary")!!
+//            diaryViewModel.insert(diary)
+            diaryViewModel.setCurrentDiary(Diary(date = ""))
         }
     }
 
