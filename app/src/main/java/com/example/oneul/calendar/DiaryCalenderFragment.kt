@@ -97,10 +97,10 @@ class DiaryCalenderFragment: Fragment() {
         }
 
         // 5월
-        for (i:Int in 1..30 step(4)){
-            var new = CalendarDay.from(2021,5,i)
+        for (i:Int in 1..30 step(6)){
+            var new = CalendarDay.from(2021,5,i+4)
             calenderdayList.add(new)
-            new = CalendarDay.from(2021,5,i+1)
+            new = CalendarDay.from(2021, 5, i)
             calenderdayList.add(new)
         }
 
