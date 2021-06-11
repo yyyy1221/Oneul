@@ -57,8 +57,6 @@ class MainFragment: Fragment() {
 
     private val startForResultSchedule = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
-//            val diary = result.data!!.getParcelableExtra<Diary>("diary")!!
-//            diaryViewModel.insert(diary)
             mainViewModel.notifyCurrententSchedule()
         }
     }

@@ -8,10 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.oneul.R
+import com.example.oneul.calendar.decorator.DiaryDecorator
 import com.example.oneul.calendar.decorator.EventDecorator
 import com.example.oneul.calendar.decorator.OneDayDecorator
 import com.example.oneul.databinding.FragmentScheduleCalenderBinding
+import com.example.oneul.viewmodel.MainViewModel
+import com.example.oneul.viewmodel.MainViewModelFactory
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import java.text.SimpleDateFormat
@@ -30,6 +37,7 @@ class ScheduleCalenderFragment: Fragment() {
     private lateinit var eventDecorator: EventDecorator
 
     private lateinit var dates: HashSet<CalendarDay>
+    private lateinit var mainViewModel: MainViewModel
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -40,6 +48,15 @@ class ScheduleCalenderFragment: Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
 
         binding = FragmentScheduleCalenderBinding.inflate(layoutInflater)
+
+        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+        mainViewModel.currentSchedule.observe(viewLifecycleOwner, Observer {
+            val drawable = context?.getDrawable(R.drawable.schedule_task)
+            eventDecorator = drawable?.let { EventDecorator(CalendarDay.today(), it) }!!
+            sCalendarView.addDecorators(eventDecorator)
+        })
+
+
 
         // Custom Calendar
         sCalendarView = binding.scheduleCalendarView
@@ -63,7 +80,7 @@ class ScheduleCalenderFragment: Fragment() {
         //날짜 누르면 일정 볼 수 있게
         sCalendarView.setOnDateChangedListener { widget, date, selected ->
             //Toast.makeText(context,date.toString(), Toast.LENGTH_SHORT).show()
-            //findNavController().navigate(R.id.action_calenderFragment_to_dailyScheduleFragment)
+            findNavController().navigate(R.id.action_calenderFragment_to_dailyScheduleFragment)
         }
 
 

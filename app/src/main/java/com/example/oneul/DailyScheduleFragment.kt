@@ -117,7 +117,7 @@ class DailyScheduleFragment : DialogFragment() {
                 view.text_time_end.text = "04:00"
                 view.text_all_day.visibility = View.GONE
             } else {
-                view.text_schedule_name.text = "호캉스"
+                view.text_schedule_name.text = "종강"
                 view.text_time_start.visibility = View.GONE
                 view.text_time_end.visibility = View.GONE
                 view.text_all_day.visibility = View.VISIBLE
