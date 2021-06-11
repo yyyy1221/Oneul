@@ -5,6 +5,7 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.prolificinteractive.materialcalendarview.CalendarDay
 
 @Entity(tableName = "diary_table")
 data class Diary(

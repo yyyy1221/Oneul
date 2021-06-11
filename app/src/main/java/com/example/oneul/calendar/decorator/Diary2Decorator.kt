@@ -1,8 +1,13 @@
 package com.example.oneul.calendar.decorator
 
+import android.graphics.drawable.Drawable
+import android.os.Build
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import com.example.oneul.MainActivity.Companion.TAG
 import com.example.oneul.R
 import com.example.oneul.config.MyContext
 import com.example.oneul.config.MyContext.Companion.context
@@ -10,31 +15,36 @@ import com.example.oneul.data.Diary
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
+import java.time.LocalDate
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashSet
 
-class DiaryDecorator():DayViewDecorator {
+@RequiresApi(Build.VERSION_CODES.O)
+class Diary2Decorator(currentDay:CalendarDay, mood:Drawable):DayViewDecorator {
 
-    private lateinit var na: Diary
-    private lateinit var date: CalendarDay
+    private var myDay = currentDay
+    private var drawable:Drawable
 
     init {
-        date = CalendarDay.today()
-        na = Diary(date = date.toString(), mood = R.drawable.joy)
+        drawable = mood
     }
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {
-        Toast.makeText(MyContext.context,date.toString(), Toast.LENGTH_SHORT).show()
-        //Log.d(MainActivity.TAG,"EventDecorator - shouldDecorate() called - "+date.toString())
-        return date != null && day!!.equals(date)
+
+        return day == myDay
     }
 
     override fun decorate(view: DayViewFacade?) {
-        context.getDrawable(na.mood!!)?.let { view!!.setBackgroundDrawable(it) }
+
+        view!!.setBackgroundDrawable(drawable)
         view!!.addSpan(
             ForegroundColorSpan(
                 ContextCompat.getColor(
                     context,
-                    R.color.transparent_blak))
+                    R.color.transparent_full))
         )
+
 
     }
 }
