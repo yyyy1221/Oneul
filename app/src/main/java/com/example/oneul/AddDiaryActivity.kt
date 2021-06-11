@@ -8,6 +8,7 @@ import androidx.core.widget.doAfterTextChanged
 import com.example.oneul.config.MyContext.Companion.context
 import com.example.oneul.data.Diary
 import com.example.oneul.databinding.ActivityAddDiaryBinding
+import java.text.SimpleDateFormat
 import java.util.*
 
 class AddDiaryActivity : AppCompatActivity() {
@@ -20,7 +21,9 @@ class AddDiaryActivity : AppCompatActivity() {
 
         binding = ActivityAddDiaryBinding.inflate(layoutInflater)
 
-        var today = Calendar.getInstance().time
+        var dataformat : SimpleDateFormat = SimpleDateFormat("yyyy년 MM월 dd일")
+        var todayTime = Calendar.getInstance().time
+        var today = dataformat.format(todayTime)
         Toast.makeText(context,today.toString(), Toast.LENGTH_SHORT).show()
         binding.tvDateAdd.text = today.toString()
 

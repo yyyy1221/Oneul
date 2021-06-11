@@ -33,7 +33,7 @@ class DiaryDecorator():DayViewDecorator {
             ForegroundColorSpan(
                 ContextCompat.getColor(
                     context,
-                    R.color.transparent_blak))
+                    R.color.transparent_full))
         )
 
     }
