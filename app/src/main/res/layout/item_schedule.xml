@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/layout_line"
         android:layout_centerVertical="true"
-        android:text="기말고사"
+        android:text="과제"
         style="@style/text_style"/>
 
 </RelativeLayout>

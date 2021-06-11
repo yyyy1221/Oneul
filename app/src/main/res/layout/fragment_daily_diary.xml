@@ -32,7 +32,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/oneulfont"
-            android:text="2021년 6월 9일"
+            android:text="2021년 6월 11일"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20dp" />
 

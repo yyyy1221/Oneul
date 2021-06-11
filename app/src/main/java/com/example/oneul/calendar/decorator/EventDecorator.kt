@@ -1,36 +1,45 @@
 package com.example.oneul.calendar.decorator
 
+import android.graphics.drawable.Drawable
+import android.os.Build
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import com.example.oneul.MainActivity.Companion.TAG
 import com.example.oneul.R
-import com.example.oneul.config.MyContext
 import com.example.oneul.config.MyContext.Companion.context
-import com.example.oneul.data.Diary
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
 
-class EventDecorator:DayViewDecorator {
-    private lateinit var date: CalendarDay
+
+@RequiresApi(Build.VERSION_CODES.O)
+class EventDecorator(currentDay:CalendarDay, mood:Drawable):DayViewDecorator {
+
+    private var myDay = currentDay
+    private var drawable:Drawable
 
     init {
-        date = CalendarDay.today()
+        drawable = mood
     }
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {
-        Toast.makeText(MyContext.context,date.toString(), Toast.LENGTH_SHORT).show()
-        //Log.d(MainActivity.TAG,"EventDecorator - shouldDecorate() called - "+date.toString())
-        return date != null && day!!.equals(date)
+
+        return day == myDay
     }
 
     override fun decorate(view: DayViewFacade?) {
-        context.getDrawable(R.drawable.exam)?.let { view!!.setBackgroundDrawable(it) }
-        view!!.addSpan(
-            ForegroundColorSpan(
-                ContextCompat.getColor(
-                    MyContext.context,
-                    R.color.transparent_blak))
-        );
+
+        view!!.setBackgroundDrawable(drawable)
+//        view!!.addSpan(
+//            ForegroundColorSpan(
+//                ContextCompat.getColor(
+//                    context,
+//                    R.color.transparent_full))
+//        )
+
+
     }
 }
