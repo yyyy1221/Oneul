@@ -38,12 +38,12 @@ class DailyDiaryFragment : Fragment() {
 
         diaryViewModel = ViewModelProvider(requireActivity()).get(DiaryViewModel::class.java)
 
-        diaryViewModel.currentDiary.observe(viewLifecycleOwner, Observer { diary ->
-            view.textView.text = diary.date
-            view.textView2.text = diary.diary
-            view.imageView6.setImageDrawable(diary.mood?.let { requireContext().getDrawable(it) })
-            view.imageView4.setImageURI(diary.imagesUrl?.toUri())
-        })
+//        diaryViewModel.currentDiary.observe(viewLifecycleOwner, Observer { diary ->
+//            view.textView.text = diary.date
+//            view.textView2.text = diary.diary
+//            view.imageView6.setImageDrawable(diary.mood?.let { requireContext().getDrawable(it) })
+//            view.imageView4.setImageURI(diary.imagesUrl?.toUri())
+//        })
 
         view.imageButton.setOnClickListener {
             activity?.onBackPressed()

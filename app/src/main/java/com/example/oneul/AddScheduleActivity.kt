@@ -38,10 +38,16 @@ class AddScheduleActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        val datePicker = MaterialDatePicker.Builder.datePicker()
+        val dateStartPicker = MaterialDatePicker.Builder.datePicker()
             .setTitleText("")
             .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
             .build()
+
+        val dateEndPicker = MaterialDatePicker.Builder.datePicker()
+            .setTitleText("")
+            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+            .build()
+
 
         val rangePicker = MaterialDatePicker.Builder.dateRangePicker()
             .setTitleText("")
@@ -49,25 +55,46 @@ class AddScheduleActivity : AppCompatActivity() {
                 Pair(MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds())
             )
 
-        val timePicker = MaterialTimePicker.Builder()
+        val timeStartPicker = MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_12H)
                 .setTitleText("")
                 .build()
 
+        val timeEndPicker = MaterialTimePicker.Builder()
+            .setTimeFormat(TimeFormat.CLOCK_12H)
+            .setTitleText("")
+            .build()
+
         binding.textDateStart.setOnClickListener {
-            datePicker.show(supportFragmentManager, "tag")
+            dateStartPicker.show(supportFragmentManager, "tag")
+        }
+
+        binding.textDateEnd.setOnClickListener {
+            dateEndPicker.show(supportFragmentManager, "tag")
         }
 
         binding.textTimeStart.setOnClickListener {
-            timePicker.show(supportFragmentManager, "tag")
+            timeStartPicker.show(supportFragmentManager, "tag")
         }
 
-        datePicker.addOnPositiveButtonClickListener {
-            binding.textDateStart.text = dateformatter.format(datePicker.selection).toString()
+        binding.textTimeEnd.setOnClickListener {
+            timeEndPicker.show(supportFragmentManager, "tag")
         }
 
-        timePicker.addOnPositiveButtonClickListener {
-            binding.textTimeStart.text = timePicker.hour.toString()+":"+timePicker.minute.toString()
+        dateStartPicker.addOnPositiveButtonClickListener {
+            binding.textDateStart.text = dateformatter.format(dateStartPicker.selection).toString()
+        }
+
+        dateEndPicker.addOnPositiveButtonClickListener {
+            binding.textDateEnd.text = dateformatter.format(dateEndPicker.selection).toString()
+        }
+
+        timeStartPicker.addOnPositiveButtonClickListener {
+            binding.textTimeStart.text = timeStartPicker.hour.toString()+":"+timeStartPicker.minute.toString()
+        }
+
+        timeEndPicker.addOnPositiveButtonClickListener {
+            binding.textTimeEnd.text = timeEndPicker.hour.toString()+":"+timeEndPicker.minute.toString()
         }
 
         binding.switchAllDay.setOnCheckedChangeListener { buttonView, isChecked ->
