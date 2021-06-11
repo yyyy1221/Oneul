@@ -5,14 +5,15 @@ import com.example.oneul.data.Calender
 import com.example.oneul.data.CalenderRepository
 import com.example.oneul.data.Diary
 import com.example.oneul.data.DiaryRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val calenderRepository: CalenderRepository, private val diaryRepository: DiaryRepository) : ViewModel() {
     val allCalenders: LiveData<List<Calender>> = calenderRepository.allCalenders.asLiveData()
     val allDiaries: LiveData<List<Diary>> = diaryRepository.allDiaries.asLiveData()
 
-    private val _currentSchedule = MutableLiveData<Diary>()
-    //val currentSchedule: LiveData<> = _currentSchedule
+    private val _currentSchedule = MutableLiveData<Int>()
+    val currentSchedule: LiveData<Int> = _currentSchedule
 
     fun insertCalender(calender: Calender) = viewModelScope.launch {
         calenderRepository.insert(calender)
@@ -20,6 +21,12 @@ class MainViewModel(private val calenderRepository: CalenderRepository, private 
 
     fun insertDiary(diary: Diary) = viewModelScope.launch {
         diaryRepository.insert(diary)
+    }
+
+    fun notifyCurrententSchedule() {
+        viewModelScope.launch(Dispatchers.Main) {
+            _currentSchedule.value = _currentSchedule.value
+        }
     }
 }
 

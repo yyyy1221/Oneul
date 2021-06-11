@@ -72,7 +72,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
                 android:text="09:00"
-                style="@style/text_style"/>
+                style="@style/text_style"
+                android:visibility="visible"/>
 
             <TextView
                 android:id="@+id/text_end"
@@ -80,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_start"
                 android:text="종료"
-                style="@style/text_style"/>
+                style="@style/text_style"
+                android:visibility="visible"/>
 
             <TextView
                 android:id="@+id/text_date_end"
@@ -112,7 +114,7 @@
                 android:layout_width="42sp"
                 android:layout_height="21sp"
                 android:layout_alignParentEnd="true"
-                android:layout_below="@+id/text_time_end"
+                android:layout_below="@+id/text_date_end"
                 android:layout_marginTop="10dp"
                 android:textOff=" "
                 android:textOn=" "
@@ -125,7 +127,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_toStartOf="@+id/switch_all_day"
-                android:layout_below="@+id/text_time_end"
+                android:layout_below="@+id/text_date_end"
                 android:text="종일"
                 style="@style/text_style"/>
 

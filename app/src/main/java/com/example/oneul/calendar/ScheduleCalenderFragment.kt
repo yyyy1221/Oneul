@@ -10,10 +10,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.oneul.R
+import com.example.oneul.calendar.decorator.DiaryDecorator
+import com.example.oneul.calendar.decorator.EventDecorator
 import com.example.oneul.calendar.decorator.OneDayDecorator
 import com.example.oneul.databinding.FragmentScheduleCalenderBinding
+import com.example.oneul.viewmodel.MainViewModel
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import java.text.SimpleDateFormat
@@ -29,9 +33,10 @@ class ScheduleCalenderFragment: Fragment() {
     private lateinit var sCalendarView:MaterialCalendarView
 
     private lateinit var oneDayDecorator: OneDayDecorator
-    //private lateinit var eventDecorator: EventDecorator
+    private lateinit var eventDecorator: EventDecorator
 
     private lateinit var dates: HashSet<CalendarDay>
+    private lateinit var mainViewModel: MainViewModel
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -80,7 +85,12 @@ class ScheduleCalenderFragment: Fragment() {
 
         //eventDecorator = EventDecorator(dates)
 
-
+        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+        mainViewModel.currentSchedule.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            eventDecorator = EventDecorator()
+            // diary icon 보이게
+            sCalendarView.addDecorators(eventDecorator)
+        })
 
         //날짜 누르면 일정 볼 수 있게
         sCalendarView.setOnDateChangedListener { widget, date, selected ->

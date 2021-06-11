@@ -16,6 +16,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.fragment.findNavController
@@ -43,16 +44,21 @@ class MainFragment: Fragment() {
     private lateinit var diaryCalendarFm: DiaryCalenderFragment
 
     private lateinit var diaryViewModel: DiaryViewModel
-    private val mainViewModel: MainViewModel by viewModels {
-        val app = activity?.application as Application
-        MainViewModelFactory(app.calenderRepository, app.diaryRepository)
-    }
+    private lateinit var mainViewModel: MainViewModel
 
-    private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+    private val startForResultDiary = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK) {
 //            val diary = result.data!!.getParcelableExtra<Diary>("diary")!!
 //            diaryViewModel.insert(diary)
             diaryViewModel.setCurrentDiary(Diary(date = ""))
+        }
+    }
+
+    private val startForResultSchedule = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_OK) {
+//            val diary = result.data!!.getParcelableExtra<Diary>("diary")!!
+//            diaryViewModel.insert(diary)
+            mainViewModel.notifyCurrententSchedule()
         }
     }
 
@@ -64,6 +70,7 @@ class MainFragment: Fragment() {
         binding = FragmentMainBinding.inflate(layoutInflater)
 
         diaryViewModel = ViewModelProvider(requireActivity()).get(DiaryViewModel::class.java)
+        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
         val adapter = CalenderListAdapter()
         binding.recyclerCalender.adapter = adapter
@@ -75,12 +82,12 @@ class MainFragment: Fragment() {
 
         binding.buttonAddDiaryMain.setOnClickListener {
             val intent= Intent(context,AddDiaryActivity::class.java)
-            startForResult.launch(intent)
+            startForResultDiary.launch(intent)
         }
 
         binding.buttonAddEventMain.setOnClickListener {
             val intent= Intent(context,AddScheduleActivity::class.java)
-            startActivity(intent)
+            startForResultSchedule.launch(intent)
             // 데이터 가져와야하므로 추후에 startResultActivity로 수정해야함
         }
 
